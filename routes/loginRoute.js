@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
         // Generate a JWT token
         const token = jwt.sign({ userId: user.id }, jwtSecretKey, { expiresIn: '1h' });
         res.cookie('token', token, { httpOnly: true });
-        res.render('dashboard');
+        res.render('chatPage');
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
